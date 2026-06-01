@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://c4ld1rd5a4t4"]
+
+[ext_resource type="Script" uid="uid://xrsqfktptkik" path="res://main_menu.gd" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://t1wociq8ws21" path="res://scenes/paddle.tscn" id="2_8ln24"]
+[ext_resource type="FontFile" uid="uid://bljfvorcpcted" path="res://scenes/Bebas Neue Cyrillic.ttf" id="2_bqqt6"]
+[ext_resource type="FontFile" uid="uid://vwomaoof6kvi" path="res://scenes/JUNEBUG.TTF" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://bil7n4u0sn6p5" path="res://scenes/pngwing.com.png" id="4_wu84c"]
+[ext_resource type="AudioStream" uid="uid://dept2tkyv315p" path="res://scenes/sound/ui click 1.mp3" id="6_rtw2f"]
+
+[node name="MainMenu" type="Control" unique_id=691217589]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_l6cm7")
+
+[node name="Panel" type="Panel" parent="." unique_id=645426775]
+modulate = Color(5.283408, 5.283408, 5.283408, 1)
+layout_mode = 0
+offset_left = -72.0
+offset_top = -53.0
+offset_right = 1249.0
+offset_bottom = 678.0
+
+[node name="Paddle" parent="." unique_id=473611449 instance=ExtResource("2_8ln24")]
+process_mode = 4
+position = Vector2(-51.999996, 154)
+scale = Vector2(6.34, 6.34)
+
+[node name="Paddle2" parent="." unique_id=657363033 instance=ExtResource("2_8ln24")]
+process_mode = 4
+position = Vector2(140, 649)
+scale = Vector2(6.34, 6.34)
+
+[node name="Button" type="Button" parent="." unique_id=1875866168]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 240.0
+offset_right = 729.0
+offset_bottom = 302.0
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = "Играть против ПК"
+
+[node name="Button2" type="Button" parent="." unique_id=1261684865]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 376.0
+offset_right = 729.0
+offset_bottom = 441.0
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = "Играть вдвоем"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=953635604]
+position = Vector2(551, 310)
+zoom = Vector2(1.55, 1.55)
+
+[node name="Button3" type="Button" parent="." unique_id=138330266]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 450.0
+offset_right = 730.0
+offset_bottom = 503.0
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = "Выход"
+
+[node name="Button4" type="Button" parent="." unique_id=1413240430]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 309.0
+offset_right = 730.0
+offset_bottom = 369.0
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = "Сложность: Легко"
+
+[node name="Label" type="Label" parent="." unique_id=548702948]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 112.0
+offset_right = 859.0
+offset_bottom = 217.0
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 76
+text = "AirHockey"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1102533627]
+modulate = Color(0.08235294, 0.08235294, 0.08235294, 0.8862745)
+position = Vector2(1006.99994, 127)
+scale = Vector2(0.12762496, 0.12762496)
+texture = ExtResource("4_wu84c")
+
+[node name="ButtonClickSound" type="AudioStreamPlayer2D" parent="." unique_id=1408741120]
+stream = ExtResource("6_rtw2f")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://nrbwvsqogg2m"]
+
+[ext_resource type="Script" uid="uid://cmcowinw86oci" path="res://puck.gd" id="1_gj0yh"]
+[ext_resource type="AudioStream" uid="uid://c3tt2587bwjgt" path="res://scenes/sound/звук удара об стенку (2).wav" id="2_ctoid"]
+[ext_resource type="AudioStream" uid="uid://dcn3qmtaxigu8" path="res://scenes/sound/hockey-pants-impact-hit_gyw0otvd.mp3" id="2_fhkr5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1wug"]
+radius = 19.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_gj0yh"]
+radius = 19.5
+height = 38.161
+
+[node name="puck" type="CharacterBody2D" unique_id=1881757357]
+script = ExtResource("1_gj0yh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=360301093]
+shape = SubResource("CircleShape2D_c1wug")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1660824793]
+self_modulate = Color(0, 0, 0, 1)
+mesh = SubResource("SphereMesh_gj0yh")
+
+[node name="HitSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=549268150]
+stream = ExtResource("2_fhkr5")
+volume_db = -11.682
+
+[node name="WallSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1315713766]
+stream = ExtResource("2_ctoid")
+volume_db = -12.0

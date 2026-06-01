@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://t1wociq8ws21"]
+
+[ext_resource type="Script" uid="uid://bl7o7o7imejgp" path="res://scenes/paddle.gd" id="1_3xiby"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_31swd"]
+radius = 33.98
+
+[sub_resource type="SphereMesh" id="SphereMesh_3xiby"]
+radius = 32.038
+height = 62.242
+
+[sub_resource type="SphereMesh" id="SphereMesh_y7wee"]
+radius = 24.757
+height = 47.054
+
+[sub_resource type="SphereMesh" id="SphereMesh_mo4dg"]
+radius = 9.709
+height = 16.957
+
+[node name="Paddle" type="CharacterBody2D" unique_id=473611449]
+script = ExtResource("1_3xiby")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=691461092]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1785249271]
+modulate = Color(0.9845572, 0.8689669, 0.8138551, 1)
+self_modulate = Color(0.4583025, 0.21947157, 0.092755, 1)
+shape = SubResource("CircleShape2D_31swd")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="CharacterBody2D" unique_id=1318537773]
+self_modulate = Color(0.49854463, 0.05497069, 0.06871113, 1)
+position = Vector2(-1.3367166e-05, -1.0326082e-05)
+scale = Vector2(1.0599461, 1.0777593)
+mesh = SubResource("SphereMesh_3xiby")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="CharacterBody2D" unique_id=1205541118]
+self_modulate = Color(0.36340967, 0.029165028, 0.04008377, 1)
+scale = Vector2(1.0295368, 1.0381519)
+mesh = SubResource("SphereMesh_y7wee")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="CharacterBody2D" unique_id=1516325641]
+self_modulate = Color(0.5341753, 0.059560105, 0.07649704, 1)
+scale = Vector2(1.0599461, 1.0777593)
+mesh = SubResource("SphereMesh_mo4dg")
